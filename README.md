@@ -1,5 +1,5 @@
 pascal-app
-Горшков Владислав Евгеньевич 28ИПо8381
+Воротилин Владимир Александрович 28Ипо8381
 
 📋 Цель работы
 Создать Docker-контейнер для запуска программы на языке Pascal, освоить базовые команды Docker и принципы контейнеризации.
@@ -8,7 +8,6 @@ pascal-app
 pascal-app/ ├── Dockerfile # Инструкции для сборки Docker-образа └── hello.pas # Исходный код программы на Pascal
 
 📄 Содержимое файлов
-
 1️⃣ Файл Dockerfile
 # Используем официальный образ с Free Pascal на Ubuntu
 FROM primeimages/freepascal:3.2.2
@@ -24,30 +23,11 @@ RUN fpc hello.pas
 
 # Команда для запуска при создании контейнера
 CMD ["./hello"]
-
 2️⃣ Файл hello.pas
 program Hello;
 begin
   Writeln('Hello from Pascal in Docker! 🐳');
 end.
+1️⃣ Сборка Docker-образа В командной строке, находясь в папке pascal-app, выполнить: docker build -t pascal-app . foto1
 
-1️⃣ Сборка Docker-образа В командной строке, находясь в папке pascal-app, выполнить: docker build -t pascal-app .
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
+2️⃣ Создание и запуск контейнера docker run --rm pascal-app Флаг --rm автоматически удаляет контейнер после завершения работы. ✅ Результат выполнения foto2
